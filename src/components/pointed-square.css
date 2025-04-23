@@ -1,0 +1,18 @@
+.square-container {
+  position: absolute;
+  margin-left: -10px;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 5px;
+  width: 130px;
+  height: 130px;
+}
+
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #b9dab9;
+  border-radius: 50%;
+}

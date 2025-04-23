@@ -1,0 +1,39 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+    margin-left:16% ;
+    margin-top: 40px;
+}
+
+@media (max-width: 1600px) { /* Medium-large desktops */
+
+    .projects-container {
+        margin-left: 12%;
+    }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) { /* Small desktops */
+
+    .projects-container {
+        margin-left: 11.5%;
+    }
+
+}
+
+@media (max-width: 768px) { /* Tablets */
+    .projects-container {
+        margin-left: 11.5%;
+    }
+}
+
+@media (max-width: 480px) { /* Phones */
+
+
+}

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: fit-content;
+  margin-left: 16%;
+  margin-top: 16vh;
+  margin-bottom: 18vh;
+}
+
+.introducing-text {
+  font-family: "ABeeZee", sans-serif;
+  font-size: 34px;
+  color: #202020;
+  margin-bottom: 0;
+  margin-left: -1px;
+}
+
+.main-text {
+  color: #0EB669;
+  font-size: 128px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  line-height: 1em;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.main-text span {
+  color: #000000;
+  font-size: 128px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 34px;
+  color: #202020;
+  margin-top: 15px;
+  margin-left: 6px;
+  margin-bottom: 0;
+}
+
+.get-in-touch {
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 23px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #131313;
+  width: fit-content;
+  padding: 15px;
+  position: relative;
+  height: fit-content;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.get-in-touch::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  width: 20%;
+  height: 20%;
+  border-radius: 15%;
+  transform-origin: center;
+  background-color: #474747;
+  transform-origin: left;
+  transition: 0.15s;
+  z-index: -1;
+}
+
+.get-in-touch:hover::before {
+  width: 105%;
+  opacity: 1;
+  height: 105%;
+}
+
+.blobContainer {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  width: 50%;
+  transform: scale(1);
+}
+
+@media (max-width: 1600px) { /* Medium-large desktops */
+  .main-container {
+    margin-left: 12%;
+    margin-top: 12vh;
+    margin-bottom: 14vh;
+  }
+  .introducing-text {
+    font-size: 32px;
+  }
+  .main-text {
+    font-size: 112px;
+  }
+  .main-text span {
+    font-size: 112px;
+  }
+  .description {
+    font-size: 32px;
+  }
+  .get-in-touch {
+    font-size: 22px;
+    padding: 14px;
+  }
+
+  .blobContainer {
+    margin-left: -9%;
+    transform: scale(0.9);
+  }
+
+
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) { /* Small desktops */
+  .main-container {
+    margin-left: 10%;
+    margin-top: 10vh;
+    margin-bottom: 12vh;
+    width: 70%;
+  }
+  .introducing-text {
+    font-size: 28px;
+  }
+  .main-text {
+    font-size: 96px;
+  }
+  .main-text span {
+    font-size: 96px;
+  }
+  .description {
+    font-size: 26px;
+    width: 75%;
+  }
+  .get-in-touch {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .blobContainer {
+    margin-left: -11%;
+    transform: scale(0.8);
+  }
+
+}
+
+@media (max-width: 768px) { /* Tablets */
+  .main-container {
+    margin-left: 8%;
+    margin-top: 18vh;
+    margin-bottom: 1vh;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  .introducing-text {
+    font-size: 24px;
+  }
+  .main-text {
+    font-size: 72px;
+  }
+  .main-text span {
+    font-size: 72px;
+  }
+  .description {
+    font-size: 24px;
+    width: 95%;
+  }
+  .get-in-touch {
+    font-size: 18px;
+    padding: 10px;
+  }
+  .blobContainer {
+    margin-left: -27%;
+    width: 1%;
+    transform: scale(0.6);
+    top:5vh;
+    right:100%;
+  }
+
+}
+
+@media (max-width: 480px) { /* Phones */
+  .main-container {
+    margin-left: 5%;
+    margin-top: 6vh;
+    margin-bottom: 8vh;
+  }
+  .introducing-text {
+    font-size: 20px;
+  }
+  .main-text {
+    font-size: 48px;
+  }
+  .main-text span {
+    font-size: 48px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .get-in-touch {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .blobContainer {
+    margin-left: -27%;
+    width: 1%;
+    transform: scale(0.2);
+  }
+
+}

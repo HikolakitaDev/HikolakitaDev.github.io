@@ -1,0 +1,85 @@
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    background-color: rgba(236, 236, 236, 0.582);
+    width: fit-content;
+    border-radius: 16px;
+    padding: 0 20px;
+    margin: auto;
+    height: 48px;
+
+}
+
+.nav-bar-children {
+    text-decoration: none;
+    width: 31px;
+    height: auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Add ::before pseudo-element to the icon wrapper */
+.icon-wrapper::before {
+    content: 'Experience';  /* Example content, can be any icon or text */
+    position: absolute;
+    opacity: 0;
+    top:10px;
+    z-index: -3;
+    left: -29px;
+    font-size: 14px;  /* Adjust size of the pseudo-element */
+    background-color: rgb(216, 216, 216);
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 10px;
+    color: rgb(65, 65, 65);  /* Adjust color of the pseudo-element */
+    transition: 0.5s;
+    transform: scale(0.4);
+  }
+
+.icon-wrapper:hover::before {
+    opacity: 1;
+    top: 50px; /* Adjust as needed */
+    transform: scale(1);
+}
+
+#home-icon-wrapper::before {
+    content: 'Home';
+    left: -14px;
+}
+
+#folder-icon-wrapper::before {
+    content: 'Projects';
+    left: -20px;
+}
+
+#build-icon-wrapper::before {
+    content: 'Skills';
+    left: -11px;
+}
+
+#emoji-events-icon-wrapper::before {
+    content: 'Awards';
+    left: -18px;
+}
+
+#contact-page-icon-wrapper::before {
+    content: 'Contact';
+    left: -21px;
+}
