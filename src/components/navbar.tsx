@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './navbar.css';
 import HomeIcon from '@mui/icons-material/Home';
 import FolderIcon from '@mui/icons-material/Folder';

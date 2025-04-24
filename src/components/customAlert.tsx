@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Alert, Snackbar, TextField, Button, Slide } from "@mui/material";
+
+import { Alert, Snackbar, Slide } from "@mui/material";
 
 function CustomAlert({ open, onClose, title, text }) {
   return (

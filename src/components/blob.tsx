@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
 import kute from "kute.js";
+import React, { useRef, useEffect } from "react";
 
 const VisualSVG = () => {
   const blob1Ref = useRef(null);
@@ -32,7 +32,7 @@ const VisualSVG = () => {
         )
         .start();
     }
-  }, []);
+  }, [blob1Ref, blob2Ref, blob3Ref]);
 
   return (
     <svg
@@ -85,3 +85,4 @@ const VisualSVG = () => {
 };
 
 export default VisualSVG;
+

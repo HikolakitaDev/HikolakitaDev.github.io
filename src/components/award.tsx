@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./award.css";
 import Award1 from "../assets/award1.png";
 import Award2 from "../assets/award2.png";

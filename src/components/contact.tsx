@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { Box, Button, Grid, Paper, TextField, Typography, Divider, IconButton } from '@mui/material';
-import CustomAlert from './customAlert';
+import { Box, Button, Grid, Paper, TextField, Typography, Divider, IconButton, Snackbar, Alert } from '@mui/material';
 import { Email as EmailIcon, WhatsApp as WhatsappIcon, GitHub as GithubIcon } from '@mui/icons-material';
-import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+import { SnackbarCloseReason } from '@mui/material';
 import "./contact.css";
-
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +12,12 @@ const ContactForm: React.FC = () => {
     subject: '',
     message: '',
   });
+  const serviceID = import.meta.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userID = import.meta.env.REACT_APP_EMAILJS_USER_ID;
+  console.log(serviceID, templateID, userID);
 
-  const [open, setOpen] = React.useState({open:false, message:"", severity:"success"});
+  const [open, setOpen] = React.useState({ open: false, message: "", severity: "success" });
 
   const handleClick = () => {
     setOpen(true);
@@ -41,21 +42,18 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Create a form data object with the necessary fields
     const formDataToSend = {
-      from_name: formData.name,       // name of the user
-      from_email: formData.email,     // email of the user
-      from_subject: formData.subject,      // subject of the message
-      message: formData.message,      // actual message content
+      from_name: formData.name,
+      from_email: formData.email,
+      from_subject: formData.subject,
+      message: formData.message,
     };
 
-
-    // Send email using EmailJS
-    emailjs.send('service_k8qxsue', 'template_mxrudzn', formDataToSend, 'ae4ns-_OOXa-q-vr8')
+    emailjs.send(serviceID, templateID, formDataToSend, userID)
       .then(
         (result) => {
           console.log(result.text);
-          setOpen({open:true, message:"Message sent successfully", severity:"success"})
+          setOpen({ open: true, message: "Message sent successfully", severity: "success" })
         },
         (error) => {
           console.log(error.text);
@@ -65,8 +63,18 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 800, marginLeft: {xl:'12.5%', md:'10%', sm:'9%', xs:'-1%'}, padding: 4, marginTop: -5, width:{xs: '200', sm: '400', md: '500', lg: '700', xl: '800'}}}>
-      <Paper elevation={3} sx={{ padding: 4, marginTop: 4, backgroundColor: '#f4fbf6', boxShadow: 'none', borderRadius: 15, border: '1px solid rgb(209, 235, 222)' }}>
+    <Box sx={{
+      maxWidth: 800,
+      marginLeft: { xl: '14.5%', md: '8%', sm: '9%', xs: '0%' },
+      margin:{xs:"auto", sm:"auto"},
+      padding: 4,
+      marginTop: -5,
+      width: { xs: '80%', sm: '60%', md: '70%', lg: '70%', xl: '90%' }
+    }}>
+      <Paper elevation={3} sx={{
+        padding: 4, marginTop: 4, backgroundColor: '#f4fbf6', boxShadow: 'none',
+        borderRadius: 15, border: '1px solid rgb(209, 235, 222)'
+      }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <form onSubmit={handleSubmit}>
@@ -81,14 +89,14 @@ const ContactForm: React.FC = () => {
                 onChange={handleInputChange}
                 sx={{
                   '& .MuiInputLabel-root': {
-                    color: 'gray', // Set the default label color
+                    color: 'gray',
                   },
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'gray', // Keep the label gray on focus
+                    color: 'gray',
                   },
                   '& .MuiOutlinedInput-root': {
                     '&.Mui-focused fieldset': {
-                      borderColor: 'black', // Set the border color to black on focus
+                      borderColor: 'black',
                     },
                   },
                 }}
@@ -105,14 +113,14 @@ const ContactForm: React.FC = () => {
                 onChange={handleInputChange}
                 sx={{
                   '& .MuiInputLabel-root': {
-                    color: 'gray', // Set the default label color
+                    color: 'gray',
                   },
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'gray', // Keep the label gray on focus
+                    color: 'gray',
                   },
                   '& .MuiOutlinedInput-root': {
                     '&.Mui-focused fieldset': {
-                      borderColor: 'black', // Set the border color to black on focus
+                      borderColor: 'black',
                     },
                   },
                 }}
@@ -128,14 +136,14 @@ const ContactForm: React.FC = () => {
                 onChange={handleInputChange}
                 sx={{
                   '& .MuiInputLabel-root': {
-                    color: 'gray', // Set the default label color
+                    color: 'gray',
                   },
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'gray', // Keep the label gray on focus
+                    color: 'gray',
                   },
                   '& .MuiOutlinedInput-root': {
                     '&.Mui-focused fieldset': {
-                      borderColor: 'black', // Set the border color to black on focus
+                      borderColor: 'black',
                     },
                   },
                 }}
@@ -153,14 +161,14 @@ const ContactForm: React.FC = () => {
                 onChange={handleInputChange}
                 sx={{
                   '& .MuiInputLabel-root': {
-                    color: 'gray', // Set the default label color
+                    color: 'gray',
                   },
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'gray', // Keep the label gray on focus
+                    color: 'gray',
                   },
                   '& .MuiOutlinedInput-root': {
                     '&.Mui-focused fieldset': {
-                      borderColor: 'black', // Set the border color to black on focus
+                      borderColor: 'black',
                     },
                   },
                 }}
@@ -170,19 +178,19 @@ const ContactForm: React.FC = () => {
                 variant="contained"
                 color="primary"
                 size="large"
-                sx={{ marginTop: 2, color: 'white', boxShadow: 'none', backgroundColor: 'rgb(100, 128, 114)' }}
+                sx={{
+                  marginTop: 2,
+                  color: 'white',
+                  boxShadow: 'none',
+                  backgroundColor: 'rgb(100, 128, 114)',
+                }}
               >
                 Send Message
               </Button>
               <Snackbar open={open.open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-                  <Alert
-                    onClose={handleClose}
-                    severity={open.severity}
-                    variant="filled"
-                    sx={{ width: '100%' }}
-                  >
-                    Your message has been sent successfully
-                  </Alert>
+                <Alert onClose={handleClose} severity={open.severity} variant="filled" sx={{ width: '100%' }}>
+                  {open.message}
+                </Alert>
               </Snackbar>
             </form>
           </Grid>
@@ -198,8 +206,8 @@ const ContactForm: React.FC = () => {
                   borderColor: 'rgb(161, 192, 177)',
                   color: 'rgb(100, 128, 114)',
                   "&:hover": {
-                    backgroundColor: 'rgb(213, 236, 225)'
-                  }
+                    backgroundColor: 'rgb(213, 236, 225)',
+                  },
                 }}
               >
                 hikolakita.dev@gmail.com

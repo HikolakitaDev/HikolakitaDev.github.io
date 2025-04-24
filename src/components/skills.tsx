@@ -1,4 +1,4 @@
- import React from "react";
+
 import Card from '@mui/material/Card';
 import "./skills.css";
 import ReactLogoColored from "../assets/React.svg.png";

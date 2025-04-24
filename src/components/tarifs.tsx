@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./tarifs.css";
 import Wallet from '../assets/wallet.png';
 import Deal from '../assets/deal.png';

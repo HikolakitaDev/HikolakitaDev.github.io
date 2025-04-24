@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./section-title.css";
 
 interface SectionTitleProps {

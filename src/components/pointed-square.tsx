@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./pointed-square.css"; // Assurez-vous d'ajouter le style dans ce fichier ou inline
 
 const SquareWithDots = () => {
