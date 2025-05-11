@@ -10,7 +10,7 @@ function ResponsiveAppBar() {
   return (
     <div className="nav-container">
       <div className="main-nav">
-        <div className="icon-wrapper" id="home-icon-wrapper">
+        <div className="icon-wrapper" id="home-icon-wrapper"> 
           <HomeIcon sx={{ fontSize: 27, color: "black" }} />
         </div>
         <div className="icon-wrapper" id="folder-icon-wrapper">

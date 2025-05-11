@@ -1,5 +1,5 @@
 import kute from "kute.js";
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const VisualSVG = () => {
   const blob1Ref = useRef(null);
